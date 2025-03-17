@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+#
+# %filename%
+# created on %date%
+# (c) %year% %author%
+# Time-stamp: <2013-01-24 12:01:28 krylon>
+
+require 'rubygems'
+
+=begin rdoc
+%module%
+Purpose:
+Dependencies:
+=end
+
