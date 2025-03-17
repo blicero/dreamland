@@ -1,5 +1,5 @@
 # -*- mode: org; fill-column: 78; -*-
-# Time-stamp: <2025-03-17 23:10:30 krylon>
+# Time-stamp: <2025-03-18 00:14:58 krylon>
 #
 #+TAGS: internals(i) ui(u) bug(b) feature(f)
 #+TAGS: design(e), meditation(m) plot(p)
@@ -13,6 +13,11 @@
   :COOKIE_DATA: todo recursive
   :VISIBILITY: children
   :END:
+  I have not touched Ruby in at least 12 years, probably quite a bit
+  longer. It's annoying, but I have forgotten so much, and Ruby has
+  continued to evolve, so I have to almost re-learn it from scratch.
+  But I have a hunch that I need the flexibility and *fluidity* that
+  Ruby offers over Python.
 ** Clocktable
    #+BEGIN: clocktable :scope file :maxlevel 255 :emphasize t
    #+CAPTION: Clock summary at [2025-03-17 Mo 23:09]
