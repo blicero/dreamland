@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
-#
+# coding: utf-8
 # %filename%
 # created on %date%
 # (c) %year% %author%
-# Time-stamp: <2013-01-24 12:01:28 krylon>
+# Time-stamp: <2025-03-17 23:17:10 krylon>
 
 require 'rubygems'
 
