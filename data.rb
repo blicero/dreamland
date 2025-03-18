@@ -3,7 +3,7 @@
 # /data/code/dreamland/data.rb
 # created on 17. 03. 2025
 # (c) 2025 Benjamin Walkenhorst
-# Time-stamp: <2025-03-18 00:11:01 krylon>
+# Time-stamp: <2025-03-18 18:45:52 krylon>
 
 require 'rubygems'
 
@@ -77,14 +77,54 @@ class Creature
     flags.each do |f|
       @flags[f.key] = f
     end
+  end # initialize(key, name, description, hp_max, hp, xp, inventory, attack=1..10, evade=1..10, armor=0, damage=1..6, initiative=1..10, *flags)
+
+  def dmg
+    base = @damage
+    w = weapon
+    if not w.nil?
+      Range.new base.begin + w[:damage].begin, base.end + w[:damage].end
+    else
+      base
+    end # if not w.nil?
+  end # dmg
+
+  def weapon
+    w = nil
+    @inventory.each do |k, i|
+      if i.include? :damage
+        if w.nil? or i[:damage].end > w[:damage].end
+          w = i
+        end
+      end
+    end
+    w
+  end # weapon
+
+end # class Creature
+
+# Location is one place in the game world.
+class Location
+  attr_reader :key, :name, :description, :items, :links, :characters, :flags
+
+  def initialize(key, name, description, items, links, characters, flags)
+    @key = key
+    @name = name
+    @description = description
+    @items = items
+    @links = links
+    @characters = characters
+    @flags = flags
   end
 end
 
+# World implements the world the game takes place in
+class World
+  attr_reader :locations, :start_loc, :state
 
-
-=begin rdoc
-Data
-Purpose:
-Dependencies:
-=end
-
+  def initialize(locations, start, state)
+    @locations = locations
+    @start_loc = start
+    @state = state
+  end
+end
